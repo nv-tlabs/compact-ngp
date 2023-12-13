@@ -5,10 +5,428 @@
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">google.load("jquery", "1.3.2");</script>
 
+<style type="text/css">
+
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #1367a7;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+.paper-title {
+    padding: 16px 0px 16px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.row, .author-row, .affil-row {
+     overflow: auto;
+}
+.author-row {
+    font-size: 20px;
+}
+.affil-row {
+    font-size: 18px;
+}
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 16px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    font-size: 14px;
+    line-height: 1.25em;
+}
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.caption {
+    font-size: 13px;
+    /*font-style: italic;*/
+    color: #666;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+video {
+    display: block;
+    margin: auto;
+}
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #1367a7;
+  color: #ecf0f1 !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+.paper-btn:hover {
+    opacity: 0.85;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.venue {
+    color: #1367a7;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #EEEEEE;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+</style>
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+
 <head>
-<title>Coming Soon!</title>
+    <title>Compact Neural Graphics Primitives with Learned Hash Probing</title>
+    <meta property="og:description" content="Compact Neural Graphics Primitives with Learned Hash Probing"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@yongyuanxi">
+    <meta name="twitter:title" content="Compact Neural Graphics Primitives with Learned Hash Probing">
+    <meta name="twitter:description" content="
+    Neural graphics primitives are faster and achieve higher quality when their neural networks are augmented by spatial data structures that hold trainable features arranged in a grid. However, existing feature grids either come with a large memory footprint (dense or factorized grids, trees, and hash tables) or slow performance (index learning and vector quantization). In this paper, we show that a hash table with learned probes has neither disadvantage, resulting in a favorable combination of size and speed. Inference is faster than unprobed hash tables at equal quality while training is only 1.2-2.6x slower, significantly outperforming prior index learning approaches. We arrive at this formulation by casting all feature grids into a common framework: they each correspond to a lookup function that indexes into a table of feature vectors. In this framework, the lookup functions of existing data structures can be combined by simple arithmetic combinations of their indices, resulting in Pareto optimal compression and speed.
+    ">
+    <meta name="twitter:image" content="https://nv-tlabs.github.io/compact-ngp/assets/teaser_small.jpg">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V8Q84EHE25"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V8Q84EHE25');
+</script>
+
+</head>
+
 
 <body>
-  Coming soon!
+
+<div class="topnav" id="myTopnav">
+  <a href="https://www.nvidia.com/"><img width="100%" src="assets/nvidia.svg"></a>
+  <a href="https://www.nvidia.com/en-us/research/" ><strong>NVIDIA Research</strong></a>
+  <a href="https://nv-tlabs.github.io/" ><strong>Toronto AI Lab</strong></a>
+</div>
+
+<div class="container">
+    <div class="paper-title">
+      <h1>Compact Neural Graphics Primitves<br>with Learned Hash Probing</h1>
+    </div>
+
+    <div id="authors">
+        <div class="author-row">
+            <div class="col-4 text-center"><a href="https://tovacinni.github.io">Towaki Takikawa</a><sup>1,2</sup></div>
+            <div class="col-4 text-center"><a href="https://tom94.net">Thomas M&uuml;ller</a><sup>1</sup></div>
+            <div class="col-4 text-center"><a href="https://merlin.nimierdavid.fr">Merlin Nimier-David</a><sup>1</sup></div>
+            <div class="col-4 text-center"><a href="https://twitter.com/mmalex">Alex Evans</a><sup>1</sup></div>
+        </div>
+        <div class="author-row">
+            <div class="col-3 text-center"><a href="https://www.cs.toronto.edu/~jacobson/">Alec Jacobson</a><sup>2,3</sup></div>
+            <div class="col-3 text-center"><a href="https://www.cs.utoronto.ca/~fidler/">Sanja Fidler</a><sup>1,2</sup></div>
+            <div class="col-3 text-center"><a href="https://research.nvidia.com/person/alex-keller">Alexander Keller</a><sup>1</sup></div>
+        </div>
+
+        <div class="affil-row">
+            <div class="col-3 text-center"><sup>1</sup>NVIDIA</a></div>
+            <div class="col-3 text-center"><sup>2</sup>University of Toronto</div>
+            <div class="col-3 text-center"><sup>3</sup>Adobe Research</div>
+        </div>
+        <div class="affil-row">
+            <div class="venue text-center"><b>SIGGRAPH Asia 2023</b></div>
+        </div>
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+            <a class="paper-btn" href="assets/compact-ngp.pdf">
+                <span class="material-icons"> description </span> 
+                 Paper 
+            </a>
+        </div></div>
+    </div>
+
+    <section id="teaser">
+      <a href="assets/teaser.png">
+          <img width="100%" src="assets/teaser.jpg">
+      </a>
+      <div class="flex-row">
+        <div style="width: 60%">
+        
+          <p style="text-align: left">
+            Compact neural graphics primitives (Ours) have an inherently small size across a variety of use cases with automatically chosen hyperparameters. In contrast to similarly compressed representations like JPEG for images (top) and masked wavelet representations [Rho et al. 2023] for NeRFs [Mildenhall et al. 2020] (bottom), our representation neither uses quantization nor coding, and hence can be queried without a dedicated decompression step. This is essential for level of detail streaming and working-memory-constrained environments such as video game texture compression. The compression artifacts of our method are easy on the eye: there is less ringing than in JPEG and less blur than in Rho et al. (though more noise). Compact neural graphics primitives are also fast: training is only 1.2-2.6x slower (depending on compression settings) and inference is faster than Instant NGP because our significantly reduced file size fits better into caches.
+
+
+          </p>
+        </div>
+        <div style="width: 40%">
+          <figure style="padding-left: 24px; margin-bottom: 0">
+            <img width="100%" src="assets/hailey-bitrate.png">
+              <p class="caption">
+                Size vs. PSNR Pareto curves on the NeRF scene from Figure 1. Our work is able to outperform Instant NGP across the board and performs competitively with masked wavelet representations [Rho et al. 2023].
+              </p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section>
+        <h2>Abstract</h2>
+        <hr>
+        <h3> Up to 4x smaller than Instant NGP at 1.2-2.6x training cost and no inference speed penalty</h3>
+        
+        <figure style="width: 100%; float: left">
+            <video class="centered" width="80%" controls>
+                <source src="assets/fastforward.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="caption">
+              40-second fast-forward video.
+            </p>
+        </figure>
+
+        <p>
+    Neural graphics primitives are faster and achieve higher quality when their neural networks are augmented by spatial data structures that hold trainable features arranged in a grid. However, existing feature grids either come with a large memory footprint (dense or factorized grids, trees, and hash tables) or slow performance (index learning and vector quantization). In this paper, we show that a hash table with learned probes has neither disadvantage, resulting in a favorable combination of size and speed. Inference is faster than unprobed hash tables at equal quality while training is only 1.2-2.6x slower, significantly outperforming prior index learning approaches. We arrive at this formulation by casting all feature grids into a common framework: they each correspond to a lookup function that indexes into a table of feature vectors. In this framework, the lookup functions of existing data structures can be combined by simple arithmetic combinations of their indices, resulting in Pareto optimal compression and speed.
+        </p>
+        
+        <figure style="width: 100%;">
+            <a href="assets/method.jpg">
+                <img width="100%" src="assets/method.jpg">
+            </a>
+            <p class="caption">
+            Overview of Compact NGP.
+            </p>
+        </figure>
+    </section>
+    </section>
+
+
+    <section id="paper">
+        <h2>Paper</h2>
+        <hr>
+        <div class="flex-row">
+            <div style="box-sizing: border-box; padding: 16px; margin: auto;">
+                <a href="assets/compact-ngp.pdf"><img class="screenshot" src="assets/paper_preview.jpg"></a>
+            </div>
+            <div style="width: 50%">
+                <p><b>
+                  Compact Neural Graphics Primitves
+with Learned Hash Probing
+                </b></p>
+                <p>Towaki Takikawa, Thomas M&uuml;ller, Merlin Nimier-David, Alex Evans, Sanja Fidler, Alec Jacobson, Alexander Keller</p>
+
+                <div><span class="material-icons"> description </span><a href="assets/compact-ngp.pdf"> Paper (PDF, 6.2 MB)</a></div>
+                <div><span class="material-icons"> description </span><a href="https://arxiv.org/abs/"> arXiv version</a></div>
+                <div><span class="material-icons"> insert_comment </span><a href="assets/compact-ngp.bib"> BibTeX</a></div>
+
+                <p>Please send feedback and questions to <a href="https://tovacinni.github.io">Towaki Takikawa</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bibtex">
+        <h2>Citation</h2>
+        <hr>
+        <pre><code>
+@inproceedings{takikawa2023compact, 
+  title = {Compact Neural Graphics Primitives with Learned Hash Probing}, 
+  author = {Takikawa, Towaki and 
+            M\"{u}ller, Thomas and 
+            Nimier-David, Merlin and 
+            Evans, Alex and 
+            Fidler, Sanja and 
+            Jacobson, Alec and 
+            Keller, Alexander}, 
+  booktitle = {SIGGRAPH Asia 2023 Conference Papers}, 
+  year = {2023}, 
+}
+</code></pre>
+    </section>
+
+    <section id="results">
+        <h2>Results</h2>
+        <hr>
+        <figure style="width: 100%;">
+            <img width="100%" src="assets/fig0.png">
+            <p class="caption">
+            PSNR vs. file size for varying hyperparameters in compressing the Kodak image dataset. We sweep three parameters: the feature codebook size N_f, 
+            the index codebook size N_c (curves ranging from 2^12 to 2^20), and the probing range N_p (dashing and dotting). 
+            A value of N_p = 1 corresponds to Instant NGP (shown as *) and has no curve because it is invariant under N_c. 
+            We see that the optimal curve at a given file size N has a feature codebook size (same-colored *) of roughly N_f = 1/3 N and index codebook size N_c = 2/3 N. 
+            Small probing ranges (solid curves) are sufficient for good compression—in-fact optimal for small values of N_c 
+            (left side of curves)—but larger probing ranges (dashed and dotted curves) yield further small improvements for large values of
+            N_c (right side of curves) at the cost of increased training time.
+            </p>
+        </figure>
+      <div class="flex-row">
+        <figure style="width: 54%;">
+            <img width="100%" src="assets/fig2.png">
+            <p class="caption">
+            PSNR vs. file size for varying hyperparameters in compressing the NeRF Lego digger.
+            </p>
+        </figure>
+        <figure style="width: 46%;">
+            <img width="100%" src="assets/fig3.png">
+            <p class="caption">
+            We fit Compact NGP to the 8000x8000px Pluto image. We show that we are able to outperform JPEG on a wide range of quality levels. The qualitative comparisons at equal size (insets) show the visual artifacts exhibited by different methods: while JPEG has color quantization arfitacts, ours appears slightly blurred.
+            </p>
+        </figure>
+      </div>
+        <figure style="width: 50%;">
+            <img width="100%" src="assets/fig1.png">
+            <p class="caption">
+            Training and inference time overheads of Compact NGP.
+            The relative training overhead (denoted with nx) is measured with respect Instant NGP.
+            </p>
+        </figure>
+    </section>
+    
+
+    <section id="acknowledgements">
+        <h2>Acknowledgements</h2>
+        <hr>
+        <div class="row">
+          <p>We would like to thank David Luebke, Karthik Vaidyanathan, and Marco Salvi for useful discussions throughout the project.</p>
+          <p>The Lego Bulldozer scene of Figure 6 was created by Blendswap user Heinzelnisse. The Pluto image of Figure 8 was created by NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute/Alex Parker.</p>
+        </div>
+    </section>
+</div>
 </body>
 </html>
